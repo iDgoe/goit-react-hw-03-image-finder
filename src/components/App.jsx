@@ -16,7 +16,7 @@
 // };
 
 import React, { Component } from 'react';
-import { fetchImages } from './services/api';
+import { fetchImages } from '../services/api';
 import { Searchbar } from './Searchbar/Searchbar';
 import { Loader } from './Loader/Loader';
 import { ImageGallery } from './ImageGallery/ImageGallery';
@@ -43,7 +43,7 @@ export class App extends Component {
     console.log(this.state.page);
     const { searchQuery, page } = this.state;
     if (prevState.searchQuery !== searchQuery || prevState.page !== page) {
-      this.getImages(searchQuery, page);
+      this.getImages(searchQuery);
     }
   }
 

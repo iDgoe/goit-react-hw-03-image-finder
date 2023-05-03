@@ -30,3 +30,19 @@
 .Button:focus {
   background-color: #303f9f;
 }
+
+.Button--hidden {
+  display: none;
+}
+
+.Loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.Button--loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
