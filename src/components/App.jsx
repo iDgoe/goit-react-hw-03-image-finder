@@ -43,17 +43,17 @@ export class App extends Component {
     console.log(this.state.page);
     const { searchQuery, page } = this.state;
     if (prevState.searchQuery !== searchQuery || prevState.page !== page) {
-      this.getImages(searchQuery);
+      this.getImages();
     }
   }
 
-  getImages = async (query, page) => {
+  getImages = async () => {
     this.setState({ isLoading: true });
-    if (!query) {
-      return;
-    }
+    // if (!query) {
+    //   return;
+    // }
     try {
-      const { hits, totalHits } = await fetchImages(query, page);
+      const { hits, totalHits } = await fetchImages();
       console.log(hits, totalHits);
       this.setState(prevState => ({
         images: [...prevState.images, ...hits],
